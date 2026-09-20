@@ -1,0 +1,48 @@
+@use "../global/variables.scss" as var;
+@use "../global/mixins.scss" as mix;
+
+.reviews-slide-quote {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+
+    background-color: var.$color-slide-bg;
+
+    @media (min-width: var.$tablet-width) {
+        padding: 30px 20px;
+    }
+
+    @media (min-width: var.$desktop-width) {
+        width: 963px;
+        padding: 52px 69px 111px;
+    }
+}
+
+.reviews-slide-quote__text {
+    max-width: 380px;
+
+    @include mix.font-main-text;
+
+    @media (min-width: var.$desktop-width) {
+        max-width: 460px;
+    }
+}
+
+.reviews-slide-quote__footer {
+    order: -1;
+    margin: 0 0 7px;
+    max-width: 360px;
+}
+
+.reviews-slide-quote__footer-cite {
+    display: block;
+    margin: 0 0 11px;
+
+    @include mix.font-author-name;
+}
+
+.reviews-slide-quote__footer-service {
+    margin: 0;
+
+    @include mix.font-subscription;
+}

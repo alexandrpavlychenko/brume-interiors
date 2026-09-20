@@ -1,0 +1,46 @@
+@use "../global/variables.scss" as var;
+@use "../global/mixins.scss" as mix;
+
+.reviews-slider__slides-list {
+    @include mix.list-reset;
+
+    margin: 0 0 30px;
+
+    @media (min-width: var.$desktop-width) {
+        margin: 0 0 61px;
+    }
+}
+
+.reviews-slider__slides-list-item {
+    position: relative;
+}
+
+.reviews-slider__pagination-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    width: max-content;
+
+    @include mix.list-reset;
+
+    margin: 0 auto;
+}
+
+.reviews-slider__pagination-button {
+    display: block;
+    border: none;
+    width: 27px;
+    height: 3px;
+
+    background-color: var.$color-text-base;
+    opacity: 0.5;
+
+    &:hover {
+        cursor: pointer;
+    }
+
+    &--active {
+        background-color: var.$color-accented-bg;
+        opacity: 1;
+    }
+}

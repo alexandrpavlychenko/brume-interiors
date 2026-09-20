@@ -1,0 +1,33 @@
+@use "../global/variables.scss" as var;
+@use "../global/mixins.scss" as mix;
+
+.services-content-header {
+    padding: 20px 0;
+
+    @media (min-width: var.$tablet-width) {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    @media (min-width: var.$desktop-width) {
+        padding: 56px 0 14px;
+    }
+}
+
+.services-content-header__heading {
+    margin: 0 0 10px;
+    max-width: 400px;
+
+    @include mix.font-subheading;
+
+    @media (min-width: var.$tablet-width) {
+        margin: 0;
+    }
+}
+
+.services-content-header__projects-counter {
+    margin: 8px 0 0;
+    max-width: 200px;
+}

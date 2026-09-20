@@ -1,0 +1,78 @@
+@use "../global/variables.scss" as var;
+@use "../global/mixins.scss" as mix;
+
+.main-nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    @media (min-width: var.$tablet-width) {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+
+    @media (min-width: var.$desktop-width) {
+        justify-content: flex-start;
+        align-items: center;
+    }
+}
+
+.main-nav__logo {
+    position: relative;
+    z-index: 1;
+
+    margin: 0 0 10px;
+
+    @media (min-width: var.$tablet-width) {
+        margin: 0 25px 0 0;
+    }
+}
+
+.main-nav__menu {
+    position: relative;
+    z-index: 1;
+
+    margin: 0 0 20px;
+
+    @media (min-width: var.$tablet-width) {
+        margin: 0 25px 0 0;
+    }
+
+    @media (min-width: var.$desktop-width) {
+        margin: 0 25px 0 0;
+    }
+}
+
+.main-nav__tel-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 8px;
+    padding: 10px;
+
+    @include mix.font-link-tel;
+
+    @media (min-width: var.$tablet-width) {
+        max-width: 200px;
+    }
+
+    @media (min-width: var.$desktop-width) {
+        margin: 0 0 0 auto;
+
+        &:hover,
+        &:focus-visible {
+            color: var.$color-accent;
+        }
+
+        &:active {
+            color: var.$color-accent-muted;
+        }
+    }
+}
+
+.main-nav__tel-link-icon {
+    color: rgba(255, 255, 255, 0.72);
+}

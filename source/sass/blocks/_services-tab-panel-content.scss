@@ -1,0 +1,44 @@
+@use "../global/variables.scss" as var;
+@use "../global/mixins.scss" as mix;
+
+.services-tab-panel-content--shown {
+    @media (min-width: var.$desktop-width) {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+.services-tab-panel-content--shown .services-tab-panel-content__picture {
+    @media (min-width: var.$desktop-width) {
+        order: -1;
+    }
+}
+
+.services-tab-panel-content__body {
+    @media (min-width: var.$tablet-width) {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: flex-end;
+        margin: 0 0 20px;
+    }
+}
+
+.services-tab-panel-content__text {
+    margin: 0 0 20px;
+
+    @include mix.font-accented-text;
+
+    @media (min-width: var.$tablet-width) {
+        margin: 0;
+        max-width: 600px;
+    }
+}
+
+.services-tab-panel-content__button {
+    margin: 0 0 20px;
+
+    @media (min-width: var.$tablet-width) {
+        margin: 0 0 11px;
+    }
+}

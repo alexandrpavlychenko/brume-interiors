@@ -1,0 +1,62 @@
+@use "../global/variables.scss" as var;
+@use "../global/mixins.scss" as mix;
+
+.services-tab {
+    @media (min-width: var.$desktop-width) {
+        display: flex;
+        flex-wrap: wrap;
+    }
+}
+
+.services-tab__menu-list {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 12px;
+    row-gap: 6px;
+
+    @include mix.list-reset;
+
+    @media (min-width: var.$desktop-width) {
+        width: 288px;
+        flex-direction: column;
+    }
+}
+
+.services-tab__menu-item {
+    flex: 0 1 auto;
+}
+
+.services-tab__menu-button {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    padding: 5px 0;
+
+    @include mix.font-accented-text;
+
+    background-color: transparent;
+
+    @media (min-width: var.$desktop-width) {
+        padding: 17px 30px 17px 0;
+    }
+
+    &:hover,
+    &:focus-visible {
+        font-weight: 600;
+
+        cursor: pointer;
+    }
+
+    &:active {
+        opacity: 0.7;
+    }
+}
+
+.services-tab__menu-button--selected {
+    font-weight: 600;
+
+    @media (min-width: var.$desktop-width) {
+        padding: 17px 30px 17px 30px;
+    }
+}

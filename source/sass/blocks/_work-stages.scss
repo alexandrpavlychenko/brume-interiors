@@ -1,0 +1,28 @@
+@use "../global/variables.scss" as var;
+@use "../global/mixins.scss" as mix;
+
+.work-stages {
+    padding: 20px 0;
+
+    @media (min-width: var.$tablet-width) {
+        padding: 25px 0;
+    }
+
+    @media (min-width: var.$desktop-width) {
+        padding: 28px 0 106px;
+    }
+}
+
+.work-stages__heading {
+    margin: 0 0 30px;
+
+    @include mix.font-section-heading;
+
+    @media (min-width: var.$tablet-width) {
+        margin: 0 0 50px;
+    }
+
+    @media (min-width: var.$desktop-width) {
+        margin: 0 0 78px;
+    }
+}

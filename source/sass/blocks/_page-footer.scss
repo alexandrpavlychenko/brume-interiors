@@ -1,0 +1,76 @@
+@use "../global/variables.scss" as var;
+@use "../global/mixins.scss" as mix;
+
+.page-footer {
+    padding: 30px 0 30px;
+
+    background-color: var.$color-accented-bg;
+
+    @media (min-width: var.$tablet-width) {
+        padding: 45px 0;
+    }
+
+    @media (min-width: var.$desktop-width) {
+        padding: 60px 0;
+    }
+}
+
+.page-footer__wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+
+    @media (min-width: var.$tablet-width) {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 120px;
+    }
+}
+
+.page-footer__copyright {
+    margin: 0 auto;
+    width: max-content;
+
+    @include mix.font-footer-link;
+
+    @media (min-width: var.$tablet-width) {
+        align-self: center;
+        margin: 30px 0 0 9px;
+    }
+}
+
+.page-footer__copyright-text-accented {
+    text-transform: uppercase;
+}
+
+.page-footer__logo {
+    display: block;
+    margin: 0 auto 35px;
+    width: 105px;
+    height: 60px;
+    padding: 15px;
+}
+
+.page-footer__brand-link {
+    margin: 0 auto;
+    width: max-content;
+    padding: 10px 0;
+
+    @include mix.font-footer-link;
+
+    @media (min-width: var.$tablet-width) {
+        align-self: center;
+        margin: 30px 0 0 auto;
+    }
+
+    @media (min-width: var.$desktop-width) {
+        &:hover,
+        &:focus-visible {
+            opacity: 0.7;
+        }
+
+        &:active {
+            opacity: 0.5;
+        }
+    }
+}

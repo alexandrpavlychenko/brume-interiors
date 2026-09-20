@@ -1,0 +1,10 @@
+@use "../global/variables.scss" as var;
+@use "../global/mixins.scss" as mix;
+
+.services-tab-panel-content-list {
+    @include mix.list-reset;
+
+    @media (min-width: var.$desktop-width) {
+        width: 878px;
+    }
+}

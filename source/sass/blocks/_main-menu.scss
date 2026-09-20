@@ -1,0 +1,47 @@
+@use "../global/variables.scss" as var;
+@use "../global/mixins.scss" as mix;
+
+.main-menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    list-style-type: none;
+
+    @media (min-width: var.$tablet-width) {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        max-width: 400px;
+    }
+
+    @media (min-width: var.$desktop-width) {
+        column-gap: 12px;
+        max-width: 800px;
+    }
+}
+
+.main-menu__link {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+
+    @include mix.font-main-menu;
+
+    @media (min-width: var.$desktop-width) {
+        &:hover,
+        &:focus-visible {
+            @media (min-width: var.$desktop-width) {
+                color: var.$color-accent;
+            }
+        }
+
+        &:active {
+            @media (min-width: var.$desktop-width) {
+                color: var.$color-accent-muted;
+            }
+        }
+    }
+}

@@ -1,0 +1,19 @@
+@use "../global/variables.scss" as var;
+@use "../global/mixins.scss" as mix;
+
+.reviews-slide__main-content-quote {
+    margin: 0;
+}
+
+.reviews-slide__picture {
+    display: block;
+    max-width: 318px;
+
+    @media (min-width: var.$tablet-width) {
+        position: absolute;
+        top: 50%;
+        right: 0;
+
+        transform: translateY(-50%);
+    }
+}

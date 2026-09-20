@@ -1,0 +1,49 @@
+@use "../global/variables.scss" as var;
+@use "../global/mixins.scss" as mix;
+
+.page {
+    margin: 0;
+    height: 100dvh;
+
+    background-color: var.$color-basic-bg;
+}
+
+.page__body {
+    display: grid;
+    grid-template-rows: 1fr auto;
+    margin: 0;
+    min-width: 320px;
+    min-height: 100dvh;
+
+    @include mix.font-main-text;
+    -webkit-font-smoothing: antialiased;
+
+    background-color: var.$color-basic-bg;
+}
+
+.page__header {
+    @media (min-width: var.$tablet-width) {
+        position: relative;
+    }
+}
+
+.page__promo {
+    @media (min-width: var.$tablet-width) {
+        position: relative;
+    }
+}
+
+.page__promo::after {
+    @media (min-width: var.$tablet-width) {
+        content: "";
+
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+
+        width: 50%;
+
+        background-color: rgba(24, 36, 48, 0.5);
+    }
+}

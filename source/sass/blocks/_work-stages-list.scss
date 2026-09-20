@@ -1,0 +1,75 @@
+@use "../global/variables.scss" as var;
+@use "../global/mixins.scss" as mix;
+
+.work-stages-list {
+    @include mix.list-reset;
+
+    counter-reset: work-stages-counter;
+
+    @media (min-width: var.$tablet-width) {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(331px, 1fr));
+        gap: 32px;
+    }
+
+    @media (min-width: var.$desktop-width) {
+        padding: 0 0 50px 24px;
+    }
+}
+
+.work-stages-list__item {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    column-gap: 40px;
+    row-gap: 0;
+    margin: 0 0 32px;
+
+    counter-increment: work-stages-counter;
+
+    @media (min-width: var.$tablet-width) {
+        margin: 0;
+    }
+}
+
+.work-stages-list__item::before {
+    content: counter(work-stages-counter);
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin: 4px 0 0;
+    width: 20px;
+    height: 20px;
+
+    @include mix.font-work-stage-number;
+
+    background-color: var.$color-accent-muted;
+    border-radius: 50%;
+}
+
+.work-stages-list__item-heading {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    max-width: 230px;
+
+    @include mix.font-subheading-alter;
+}
+
+.work-stages-list__item-heading::after {
+    content: "";
+
+    margin: 12px 0;
+    width: 41px;
+    height: 1px;
+
+    background-color: var.$color-text-accented;
+}
+
+.work-stages-list__item-text {
+    margin: 0;
+    padding: 0 0 0 60px;
+}

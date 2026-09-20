@@ -1,0 +1,63 @@
+@use "../global/variables.scss" as var;
+@use "../global/mixins.scss" as mix;
+
+.advantages-list {
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+
+    @include mix.list-reset;
+
+    counter-reset: advantages-counter;
+
+    @media (min-width: var.$tablet-width) {
+        display: grid;
+        row-gap: 32px;
+        column-gap: 20px;
+        grid-template-columns: repeat(auto-fit, minmax(277px, 1fr));
+    }
+
+    @media (min-width: var.$desktop-width) {
+        column-gap: 12px;
+        grid-template-columns: repeat(auto-fit, minmax(283px, 1fr));
+    }
+}
+
+.advantages-list__item {
+    display: flex;
+    flex-direction: column;
+
+    counter-increment: advantages-counter;
+}
+
+.advantages-list__item:nth-child(even) {
+    @media (min-width: var.$desktop-width) {
+        margin: 210px 0 0;
+    }
+}
+
+.advantages-list__item:last-child {
+    @include mix.font-stronger-text;
+}
+
+.advantages-list__item::before {
+    content: "0" counter(advantages-counter);
+
+    margin: 0 0 14px;
+
+    @include mix.font-feature-number;
+}
+
+.advantages-list__item-heading {
+    margin: 0 0 21px;
+
+    @include mix.font-subheading-alter;
+
+    @media (min-width: var.$tablet-width) {
+        max-width: 160px;
+    }
+}
+
+.advantages-list__item-text {
+    margin: 0 0 20px;
+}

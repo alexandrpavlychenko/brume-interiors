@@ -1,0 +1,81 @@
+@use "../global/variables.scss" as var;
+@use "../global/mixins.scss" as mix;
+
+.button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 18px 25px 19px;
+    min-width: 80px;
+
+    @include mix.font-button;
+}
+
+.button--accented {
+    border: 2px solid var.$color-much-accent;
+
+    color: var.$color-button-text;
+
+    background-color: var.$color-much-accent;
+
+
+    @media (min-width: var.$desktop-width) {
+        &:hover,
+        &:focus-visible {
+            background-color: var.$color-accent-muted;
+            border-color: var.$color-accent-muted;
+        }
+
+        &:active {
+            opacity: 0.7;
+        }
+    }
+}
+
+.button--ordinary {
+    padding: 18px 40px 19px;
+
+    color: var.$color-text-accented;
+
+    border: 2px solid var.$color-text-accented;
+
+    @media (min-width: var.$desktop-width) {
+        &:hover,
+        &:focus-visible {
+            color: var.$color-basic-bg;
+
+            background-color: var.$color-text-accented;
+        }
+
+        &:active {
+            opacity: 0.7;
+        }
+    }
+}
+
+.button--ordinary-contrast {
+    border: 2px solid var.$color-button-text;
+    padding: 23px 40px;
+
+    color: var.$color-button-text;
+
+    background-color: transparent;
+
+    @media (min-width: var.$desktop-width) {
+        &:hover,
+        &:focus-visible {
+            @media (min-width: var.$desktop-width) {
+                color: var.$color-text-accented;
+
+                border-color: var.$color-text-accented;
+                background-color: var.$color-button-text;
+
+                cursor: pointer;
+            }
+        }
+
+        &:active {
+            opacity: 0.7;
+        }
+    }
+}

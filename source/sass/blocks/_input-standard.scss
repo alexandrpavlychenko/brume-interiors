@@ -1,0 +1,20 @@
+@use "../global/variables.scss" as var;
+@use "../global/mixins.scss" as mix;
+
+.input-standard {
+    position: relative;
+    z-index: 2;
+
+    border: none;
+    border-bottom: 1px solid var.$color-basic-bg;
+    padding: 10px 44px 10px 4px;
+    width: 100%;
+
+    @include mix.font-alter-text;
+
+    background-color: transparent;
+}
+
+.input-standard::placeholder {
+    @include mix.font-placeholder;
+}

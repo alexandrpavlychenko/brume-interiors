@@ -1,0 +1,39 @@
+/* FOUNDATION */
+@use "global/variables" as var;
+@use "global/mixins" as mix;
+
+/* GLOBAL */
+@use "global/fonts";
+@use "global/global-selectors";
+
+/* HELPERS */
+@use "helpers/visually-hidden";
+@use "helpers/container";
+
+/* BLOCKS */
+@use "blocks/page";
+@use "blocks/page-header";
+@use "blocks/main-nav";
+@use "blocks/main-logo";
+@use "blocks/main-menu";
+@use "blocks/promo";
+@use "blocks/button";
+@use "blocks/advantsges";
+@use "blocks/advantsges-list";
+@use "blocks/services";
+@use "blocks/services-tab";
+@use "blocks/services-tab-panel-content-list";
+@use "blocks/services-tab-panel-content";
+@use "blocks/services-content-header";
+@use "blocks/work-stages";
+@use "blocks/work-stages-list";
+@use "blocks/order";
+@use "blocks/order-form";
+@use "blocks/order-form-input-standard-wrapper";
+@use "blocks/input-standard";
+@use "blocks/reviews";
+@use "blocks/reviews-slider";
+@use "blocks/reviews-slide";
+@use "blocks/reviews-slide-quote";
+@use "blocks/page-footer";
+@use "blocks/socials";

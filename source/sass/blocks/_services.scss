@@ -1,0 +1,20 @@
+@use "../global/variables.scss" as var;
+@use "../global/mixins.scss" as mix;
+
+.services {
+    padding: 30px 0 20px;
+
+    @media (min-width: var.$desktop-width) {
+        padding: 70px 0;
+    }
+}
+
+.services__heading {
+    margin: 0 0 30px;
+
+    @include mix.font-section-heading;
+
+    @media (min-width: var.$desktop-width) {
+        margin: 0 0 70px;
+    }
+}
